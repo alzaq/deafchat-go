@@ -27,6 +27,8 @@ func main() {
 	})
 
 	router.POST("/recognize/:lang", func(c *gin.Context) {
+		lang := c.Param("lang")
+
 		body, err := ioutil.ReadAll(c.Request.Body)
 		if err != nil {
 			panic(err)
@@ -39,8 +41,9 @@ func main() {
 		err = json.Unmarshal(body, &data)
 
 		uDec, _ := base64.StdEncoding.DecodeString(data.Audio)
-		value := recognize.Recognize(uDec)
+		value := recognize.Recognize(uDec, lang)
 
+		c.Header("Access-Control-Allow-Origin", "*")
 		c.JSON(200, gin.H{
 			"text": value,
 		})
