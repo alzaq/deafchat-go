@@ -1,1 +1,1 @@
-web: bin/deafchat
+web: go run main.go
