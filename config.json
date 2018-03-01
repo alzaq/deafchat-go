@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "deafchat-196310",
+  "private_key_id": "8206b82f9d3d903607a620a6f5fdc5d346aafcc4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC7rUqSZ8xSuG7i\nrtR5SHWXYMdeqtl/8BHdg6dXb2ndJAvOtROtdXVh0VBNm5R6hug8V+OSTiXha+Fh\nKZgZdCYjFZfDQcf6nqnXhwm6bqPgVonK5HneN/H7Y+iE2Abd0A4NrMUOxCQWxxJx\nz+rqfPqb5oe5pLuidDFpbFC4OQ0nVwHtTJD2h/Nzd1az4Bzy/RT/QyW3xFsGnh7X\nV+Qwa0Ds2eM1m6eBN66Y3wVMQrFnfkoM1vToj62+IrIi6cxs6k/V1yqlca9ludr2\nWF3dcRN0sMpjKf7s+exil9vXX2J1S9r8sHn2AYaFO+LeEpDA92+G2sbIp7QYWzXn\nJFTpewYJAgMBAAECggEAGSjZVSi0n8dJWDrDUbIIz58iAxso1smmf3l5itNtEAAX\n1CF6zpdvQcqHdyv6+vUQd5x5reCrm910RKwIj6r+PNhVdM/iAQNZtgLMp1FTR00a\nolhATS3XUxH49ywluYE9jRBDB6B8TRBpdNgAgGh6SUGdouHGZLgqcp1aceP2EzaQ\nTiqoZBKVeNAWzkYNNgLnxHm+4eINv+W2gSR9sIeKiXtnDDpqaxVxUCelty5q4jfL\n7kVr0+23QCVSrLi1MPJugSgRdN6G1qucuBcg95MoCG/+lsCXIH2o37y2Ji923Pht\nLc/BoNNyoX8EvCwAEdI/K+wffyqS00YoIEIIADVDHQKBgQDdH5X7F5BZRPf28Puw\nqZpIw1+gz6zETCdub+mywE9GDKBcjFhS2KpDtWDNvDyq8EZ9SJ5rwR1r3+8/SjFL\no3hd35FunMgWVpJTceF5sDhtFmYBJ6+/4i8Bzds0qEliS4ctCM2qAd4fbPNhGqE+\n4v6X1OAKiY0PFB23cdqwcrRLfQKBgQDZRzhbh6BiJRHRlCT1ADHnOgBtpLRzKNND\nf1EH4Q5vpWdpDZYmxfE2ErDMGVj1KTeioX4XwMUKajjQtNN1VqFRXWWz9uOEs1O/\n6IdwqPeYj7lfJABmzHj0bsR63i5Dk3cusUGfRM/qgmDB8vl/Ng33x1Q+HSQ+74nC\nMS/22E7yfQKBgE3KnukHETFWoiWuAd3UzQJsOWhJp24nnHetx3mrTjhGmOP2O9xp\nfPz1Amlen7lDbokE0zb1aXRaA8EwSMdjayUbUf6oCXxSWIgiuEAnTrKR/rDJVXsc\nB42K7mNIEQkTqSqevjvhDFPh8H1o8PE+ynJ/4ZHTclyrpwiydU0+DU/BAoGABInp\nUngl0IcHtUIL95Y2dKcQhTnQjytGJn3NWoXIAGsLGvWuskamQEPpr4nEAvMGd346\nHRLoysvnPezZEfVqT0HNMxIwNIBuem7IDYFqEqTF8YfV/k+9IxYBQrPLcZvt/Gq1\nfTc5xKNOlB6YOaEOb6OZTebb7/ie/xB5+QURuR0CgYA4OYd62XCnARie0Y4dbnrS\n1apK2GVr0RzGPY4Xhc4N3gPrxZDo0J8L1P6u3aAGu9fOer7PYpZGOaozc6iTCl2d\nfFHWQjJO9kIzUONRye2K+1p0DC23qGcbd4Yop9Ann3MjMKI+1I1aWVxp03c7MJm/\n3DgunzzaGr09Y+UBcB6rdQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "golang@deafchat-196310.iam.gserviceaccount.com",
+  "client_id": "107817071507348505274",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/golang%40deafchat-196310.iam.gserviceaccount.com"
+}
