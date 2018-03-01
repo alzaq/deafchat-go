@@ -1,1 +1,1 @@
-web: bin/deafchat-go
+web: bin/deafchat
