@@ -15,10 +15,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var router *gin.Engine
-
 func main() {
-	router = gin.Default()
+	router := gin.Default()
 
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -73,6 +71,22 @@ func main() {
 		io.Copy(sound, response.Body)
 
 		c.File(fileName)
+	})
+
+	router.GET("/test/:lang/:text", func(c *gin.Context) {
+		lang := c.Param("lang")
+		text := c.Param("text")
+		c.JSON(200, gin.H{
+			"status": "NotFound",
+			"lang":   lang,
+			"text":   text,
+		})
+	})
+
+	router.NoRoute(func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"status": "NotFound",
+		})
 	})
 
 	router.Run()
