@@ -74,9 +74,8 @@ func main() {
 
 		sound, _ := os.Create(fileName)
 		defer os.Remove(fileName)
-		defer sound.Close()
-
 		io.Copy(sound, response.Body)
+		sound.Close()
 
 		fmt.Println("5.step - final")
 
