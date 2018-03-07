@@ -72,7 +72,11 @@ func main() {
 
 		fmt.Println("4.step - fileName", fileName)
 
-		sound, _ := os.Create(fileName)
+		sound, err := os.Create(fileName)
+		if err != nil {
+			fmt.Println("Error", err)
+		}
+
 		defer os.Remove(fileName)
 		io.Copy(sound, response.Body)
 		sound.Close()
