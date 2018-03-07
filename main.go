@@ -51,9 +51,15 @@ func main() {
 		lang := c.Param("lang")
 		text := c.Param("text")
 
+		fmt.Println("1.step - data", lang, text)
+
 		escapedText := url.PathEscape(text)
 
+		fmt.Println("2.step - escapedText", escapedText)
+
 		urlTTS := speech.SpeechURL(escapedText, lang)
+
+		fmt.Println("3.step - urlTTS", urlTTS)
 
 		response, err := http.Get(urlTTS)
 		defer response.Body.Close()
@@ -64,11 +70,15 @@ func main() {
 
 		fileName := fmt.Sprintf("sounds/%s.webm", escapedText)
 
+		fmt.Println("4.step - fileName", fileName)
+
 		sound, _ := os.Create(fileName)
 		defer os.Remove(fileName)
 		defer sound.Close()
 
 		io.Copy(sound, response.Body)
+
+		fmt.Println("5.step - final")
 
 		c.File(fileName)
 	})
