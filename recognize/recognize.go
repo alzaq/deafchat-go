@@ -1,6 +1,7 @@
 package recognize
 
 import (
+	"fmt"
 	"log"
 
 	speech "cloud.google.com/go/speech/apiv1"
@@ -26,6 +27,8 @@ func Recognize(data []byte, lang string) string {
 			AudioSource: &speechpb.RecognitionAudio_Content{Content: data},
 		},
 	})
+
+	fmt.Println(resp.Results)
 
 	if len(resp.Results) > 0 {
 		return resp.Results[0].Alternatives[0].Transcript
