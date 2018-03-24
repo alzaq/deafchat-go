@@ -31,7 +31,7 @@ func Recognize(data []byte, lang string) string {
 	fmt.Println(resp.Results)
 
 	if len(resp.Results) > 0 {
-		return fmt.Sprintf("%s - %g", resp.Results[0].Alternatives[0].Transcript, resp.Results[0].Alternatives[0].Confidence)
+		return fmt.Sprintf("%s", resp.Results[0].Alternatives[0].Transcript)
 	}
 	return ""
 }
