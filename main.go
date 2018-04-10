@@ -17,6 +17,10 @@ import (
 	"github.com/joho/godotenv"
 )
 
+type visionStruct struct {
+	Url string
+}
+
 func main() {
 	godotenv.Load()
 
@@ -53,7 +57,17 @@ func main() {
 
 	vision.VisionInit()
 	router.POST("/vision", func(c *gin.Context) {
-		url := c.PostForm("url")
+		decoder := json.NewDecoder(c.Request.Body)
+
+		fmt.Println()
+
+		var t visionStruct
+		err := decoder.Decode(&t)
+
+		if err != nil {
+			panic(err)
+		}
+		url := t.Url
 		if len(url) < 1 {
 			c.JSON(400, gin.H{
 				"text": "no url",
