@@ -14,9 +14,12 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	godotenv.Load()
+
 	router := gin.Default()
 
 	router.GET("/", func(c *gin.Context) {
@@ -49,15 +52,15 @@ func main() {
 	})
 
 	vision.VisionInit()
-	router.GET("/vision", func(c *gin.Context) {
-		url, _ := c.Request.URL.Query()["url"]
+	router.POST("/vision", func(c *gin.Context) {
+		url := c.PostForm("url")
 		if len(url) < 1 {
 			c.JSON(400, gin.H{
 				"text": "no url",
 			})
 		}
 
-		value := vision.DetectURL(url[0])
+		value := vision.DetectURL(url)
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.JSON(200, gin.H{
 			"text": value,

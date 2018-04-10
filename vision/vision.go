@@ -1,11 +1,14 @@
 package vision
 
 import (
-	"context"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"time"
+
+	"golang.org/x/net/context"
 
 	vision "cloud.google.com/go/vision/apiv1"
 )
@@ -18,6 +21,8 @@ func VisionInit() {
 
 func DetectURL(url string) string {
 
+	name := fmt.Sprintf("photos/%s", time.Now().Format(time.RFC3339Nano))
+
 	// don't worry about errors
 	response, e := http.Get(url)
 	if e != nil {
@@ -27,16 +32,17 @@ func DetectURL(url string) string {
 	defer response.Body.Close()
 
 	//open a file for writing
-	f, err := os.Create("../photos/random")
+	f, err := os.Create(name)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	// Use io.Copy to just dump the response body to the file. This supports huge files
 	_, err = io.Copy(f, response.Body)
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer f.Close()
+	f.Close()
 
 	ctx := context.Background()
 
@@ -45,11 +51,15 @@ func DetectURL(url string) string {
 		panic(err)
 	}
 
+	f, _ = os.Open(name)
+	defer os.Remove(name)
+	defer f.Close()
 	image, err := vision.NewImageFromReader(f)
 	if err != nil {
 		panic(err)
 	}
-	annotations, err := client.DetectLabels(ctx, image, nil, 10)
+
+	annotations, err := client.DetectLabels(ctx, image, nil, 15)
 	if err != nil {
 		panic(err)
 	}
@@ -59,9 +69,9 @@ func DetectURL(url string) string {
 	if len(annotations) == 0 {
 		text = "No labels found."
 	} else {
-		text = "Labels:"
+		text = "Labels: "
 		for _, annotation := range annotations {
-			text += annotation.Description
+			text += fmt.Sprintf("%s, ", annotation.Description)
 		}
 	}
 
