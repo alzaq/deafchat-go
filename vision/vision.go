@@ -27,7 +27,7 @@ func DetectURL(url string) string {
 	defer response.Body.Close()
 
 	//open a file for writing
-	f, err := os.Create("/photos/random")
+	f, err := os.Create("../photos/random")
 	if err != nil {
 		log.Fatal(err)
 	}
