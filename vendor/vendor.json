@@ -33,6 +33,12 @@
 			"revisionTime": "2018-02-23T18:35:39Z"
 		},
 		{
+			"checksumSHA1": "kF8dT2T13cd5xVRYwh7Koc+pWyE=",
+			"path": "cloud.google.com/go/vision/apiv1",
+			"revision": "95258be6275352e1a909e41cd677d58dbcbfd2b4",
+			"revisionTime": "2018-04-09T21:10:56Z"
+		},
+		{
 			"checksumSHA1": "HvS6tXzDc3D3VlSaiaPu3baJWbo=",
 			"path": "github.com/aws/aws-sdk-go/aws",
 			"revision": "19ec91a64faf688e3141f08986aa4f03f0c57a28",
@@ -206,6 +212,12 @@
 			"path": "github.com/golang/protobuf/ptypes/timestamp",
 			"revision": "bbd03ef6da3a115852eaf24c8a1c46aeb39aa175",
 			"revisionTime": "2018-02-02T18:43:18Z"
+		},
+		{
+			"checksumSHA1": "kcdAvzEm6mbIP7E/2+yBVwcSTbY=",
+			"path": "github.com/golang/protobuf/ptypes/wrappers",
+			"revision": "e09c5db296004fbe3f74490e84dcd62c3c5ddb1b",
+			"revisionTime": "2018-03-28T16:31:53Z"
 		},
 		{
 			"checksumSHA1": "y1/eOdw+BOXCuT83J7mP3ReXaf8=",
@@ -394,6 +406,12 @@
 			"revisionTime": "2018-02-26T18:25:57Z"
 		},
 		{
+			"checksumSHA1": "wb9hdn8KaF/EAoDkXHq4XHu4+Rg=",
+			"path": "google.golang.org/genproto/googleapis/cloud/vision/v1",
+			"revision": "51d0944304c3cbce4afe9e5247e21100037bff78",
+			"revisionTime": "2018-04-09T22:20:37Z"
+		},
+		{
 			"checksumSHA1": "vc+9PCmyZFQq8XMHna/levARlVM=",
 			"path": "google.golang.org/genproto/googleapis/longrunning",
 			"revision": "2d9486acae19cf9bd0c093d7dc236a323726a9e4",
@@ -404,6 +422,18 @@
 			"path": "google.golang.org/genproto/googleapis/rpc/status",
 			"revision": "2d9486acae19cf9bd0c093d7dc236a323726a9e4",
 			"revisionTime": "2018-02-26T18:25:57Z"
+		},
+		{
+			"checksumSHA1": "NDE6HA8DOMB+htKi4kkozwheHjk=",
+			"path": "google.golang.org/genproto/googleapis/type/color",
+			"revision": "51d0944304c3cbce4afe9e5247e21100037bff78",
+			"revisionTime": "2018-04-09T22:20:37Z"
+		},
+		{
+			"checksumSHA1": "rPTp+eniSenSXN2nZU0Di5bSXJA=",
+			"path": "google.golang.org/genproto/googleapis/type/latlng",
+			"revision": "51d0944304c3cbce4afe9e5247e21100037bff78",
+			"revisionTime": "2018-04-09T22:20:37Z"
 		},
 		{
 			"checksumSHA1": "qPuHWzpT+N4YMPfWtaElzcP2CSk=",
