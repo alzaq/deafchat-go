@@ -50,7 +50,7 @@ func main() {
 
 	vision.VisionInit()
 	router.GET("/vision", func(c *gin.Context) {
-		url, ok := c.Request.URL.Query()["url"]
+		url, _ := c.Request.URL.Query()["url"]
 		if len(url) < 1 {
 			c.JSON(400, gin.H{
 				"text": "no url",
