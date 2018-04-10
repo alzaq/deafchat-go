@@ -2,12 +2,22 @@ package vision
 
 import (
 	"context"
+	"fmt"
+	"os"
 
 	vision "cloud.google.com/go/vision/apiv1"
 )
 
-func RecognizeURL(url string) string {
+func VisionInit() {
+	_ = context.Background()
+	_ = vision.ImageAnnotatorClient{}
+	_ = os.Open
+}
+
+func DetectURL(url string) string {
 	ctx := context.Background()
+
+	fmt.Println(url)
 
 	client, err := vision.NewImageAnnotatorClient(ctx)
 	if err != nil {

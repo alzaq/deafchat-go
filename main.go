@@ -48,14 +48,16 @@ func main() {
 		})
 	})
 
+	vision.VisionInit()
 	router.GET("/vision", func(c *gin.Context) {
 		url, ok := c.Request.URL.Query()["url"]
-		if !ok {
-			panic("neni url")
+		if len(url) < 1 {
+			c.JSON(400, gin.H{
+				"text": "no url",
+			})
 		}
 
-		value := vision.RecognizeURL(url[0])
-
+		value := vision.DetectURL(url[0])
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.JSON(200, gin.H{
 			"text": value,
