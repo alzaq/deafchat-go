@@ -3,6 +3,7 @@ package main
 import (
 	"deafchat-go/recognize"
 	"deafchat-go/speech"
+	"deafchat-go/vision"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -40,6 +41,20 @@ func main() {
 
 		uDec, _ := base64.StdEncoding.DecodeString(data.Audio)
 		value := recognize.Recognize(uDec, lang)
+
+		c.Header("Access-Control-Allow-Origin", "*")
+		c.JSON(200, gin.H{
+			"text": value,
+		})
+	})
+
+	router.GET("/vision", func(c *gin.Context) {
+		url, ok := c.Request.URL.Query()["url"]
+		if !ok {
+			panic("neni url")
+		}
+
+		value := vision.RecognizeURL(url[0])
 
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.JSON(200, gin.H{
